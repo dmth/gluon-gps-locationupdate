@@ -1,7 +1,9 @@
 # Configure GPS
-stty -F /dev/ttyUSB0 raw 4800 cs8 clocal -parenb crtscts -cstopb;
+stty -F /dev/ttyACM0 raw 4800 cs8 clocal -parenb crtscts -cstopb;
+uci set gluon-node-info.@location[0].share_location=0;
+
 # Use GPS  as Stream
-exec 4</dev/ttyUSB0;
+exec 4</dev/ttyACM0;
 while true
 do
     read this_line;
@@ -50,7 +52,8 @@ do
             break;
         else
             echo "Position is Invalid..." $valid;
-            break;
+            uci set gluon-node-info.@location[0].share_location=0;
+           break;
         fi
     fi
 done <&4;
