@@ -49,6 +49,8 @@ do
             uci set gluon-node-info.@location[0].latitude=$latdeg$latdec;
             uci set gluon-node-info.@location[0].longitude=$londeg$londec;
             # uci commit gluon-node-info; See Phip's comment below why this should not be done here.
+            # Link to Phip's comment: https://forum.freifunk.net/t/freifunk-location-update-via-gps/1493/2
+            # Committing here would wear out the nvram very fast, so it should not be done.
             break;
         else
             echo "Position is Invalid..." $valid;
