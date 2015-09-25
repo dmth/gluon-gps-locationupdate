@@ -10,6 +10,7 @@ https://forum.freifunk.net/t/freifunk-location-update-via-gps/1493
 
 ###Navilock###
 NL-602U -> kmod-usb-acm -> /dev/ttyUSB0
+
 NL-302U -> kmod-usb-serial-pl2303 -> /dev/ttyACM0 -> 4800 Baud
 
 ###U-Blox 7 based GPS?###
